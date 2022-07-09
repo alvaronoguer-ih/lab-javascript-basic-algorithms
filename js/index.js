@@ -2,10 +2,10 @@
 //
 console.log("I'm ready!");
 
-let hacker1 = "Acvaro"; 
+let hacker1 = "aaaa"; 
 console.log("The driver's name is " +hacker1);
 
-let hacker2 = "Antonius"; 
+let hacker2 = "aaaa"; 
 console.log("The navigator's name is " +hacker2)
 
 // Iteration 2: Conditionals
@@ -46,25 +46,39 @@ console.log(nameReverse)
 
 let nameHa = hacker1.toLowerCase();
 let nameHb = hacker2.toLowerCase();
-let contA = 0;
-let contB = 0;
+let shorter; 
+let namePlus;
 
+if (nameHa.length > nameHb.length) {
+    shorter = nameHb;
+} else {
+    shorter = nameHa;
+}
 
-for (let i = 0; i < nameHa.length; i++) {
-    if (nameHa[i] > nameHb[i]) {
-        contA++
-    } else if (nameHa[i] < nameHb[i]) {
-        contB++
+console.log(shorter)
+
+for (let i = 0; i < shorter.length; i++) {
+    if (nameHa[i] < nameHb[i]) {
+        namePlus = 'a';
+    } else if (nameHa[i] > nameHb[i]) {
+        namePlus = 'b';
     }
 }
 
-console.log(contA);
-console.log(contB);
+console.log(namePlus)
 
-if (contA > contB) {
+switch (namePlus) {
+    case 'a': 
     console.log(`The driver's name goes first.`)
-} else if (contA < contB) {
-    console.log(`Yo, the navigator goes first definitely`)
-} else {
+    break;
+
+    case 'b': 
+    console.log(`Yo, the navigator goes first definitely.`)
+    break;
+
+    default: 
     console.log(`What?! You both have the same name?`)
+    break;
+
+
 }
